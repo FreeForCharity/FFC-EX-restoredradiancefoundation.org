@@ -57,31 +57,19 @@ export const testConfig = {
    * Social Media Links Configuration
    * Used in: tests/social-links.spec.ts
    */
-  socialLinks: {
-    facebook: {
-      url: 'facebook.com/freeforcharity',
-      ariaLabel: 'Facebook',
-    },
-    twitter: {
-      url: 'x.com/freeforcharity1',
-      ariaLabel: 'X (Twitter)',
-    },
-    linkedin: {
-      url: 'linkedin.com/company/freeforcharity',
-      ariaLabel: 'LinkedIn',
-    },
-    github: {
-      url: 'github.com/FreeForCharity/FFC_Single_Page_Template',
-      ariaLabel: 'GitHub',
-    },
-  },
+  // Sourced from siteConfig.social (single source of truth) so the tests
+  // track whatever this fork configures — including an empty list for a
+  // charity with no social presence yet.
+  socialLinks: siteConfig.social.map((s) => ({ url: s.href, ariaLabel: s.label })),
 
   /**
    * Copyright Configuration
    * Used in: tests/copyright.spec.ts
    */
   copyright: {
-    text: 'All Rights Are Reserved by Free For Charity a US 501c3 Non Profit',
+    // Mirrors the footer's conditional: the "US 501c3" suffix only renders
+    // once siteConfig.nonprofitStatus is set (i.e. after IRS determination).
+    text: `All Rights Are Reserved by ${siteConfig.name}${siteConfig.nonprofitStatus ? ' a US 501c3 Non Profit' : ''}`,
     searchText: 'All Rights Are Reserved',
     // Sourced from siteConfig so the parent-org link expectations track the
     // footer (which now shows the org name, not the raw URL, as link text).
@@ -122,9 +110,10 @@ export const testConfig = {
    * Used in: tests/logo.spec.ts
    */
   logo: {
-    headerAlt: 'Free For Charity',
+    // The header renders the logo alt from siteConfig.name.
+    headerAlt: siteConfig.name,
     heroAlt: 'Hero image',
-    navBarAriaLabel: 'Free For Charity home',
+    navBarAriaLabel: `${siteConfig.name} home`,
   },
 
   /**
