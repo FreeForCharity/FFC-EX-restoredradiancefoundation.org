@@ -114,55 +114,25 @@ export type SiteConfig = {
 }
 
 export const siteConfig: SiteConfig = {
-  name: 'Free For Charity',
-  tagline: 'Reduce Costs, Increase Impact',
+  name: 'Restored Radiance Foundation',
+  tagline: 'A Free For Charity supported nonprofit',
   description:
-    'Free For Charity connects students, professionals, and businesses with nonprofits to reduce costs and increase revenues—putting more resources back into their missions.',
+    'Restored Radiance Foundation is a newly forming nonprofit organization. Our website is under construction while we complete onboarding with Free For Charity.',
   shortDescription:
-    'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
-  url: 'https://ffcworkingsite1.org',
-  twitterHandle: '@freeforcharity',
+    'Restored Radiance Foundation is a newly forming nonprofit organization. Website under construction.',
+  url: 'https://restoredradiancefoundation.org',
+  twitterHandle: '',
   contactEmail: 'security@freeforcharity.org',
-  keywords: [
-    'nonprofit',
-    'charity',
-    'volunteer',
-    'donate',
-    'free hosting',
-    'domains',
-    'Microsoft 365',
-  ],
+  keywords: ['nonprofit', 'charity', 'Restored Radiance Foundation'],
   themeColor: '#ffffff',
   vulnerabilityDisclosurePath: '/vulnerability-disclosure-policy',
-  social: [
-    { label: 'Facebook', href: 'https://www.facebook.com/freeforcharity' },
-    { label: 'X (Twitter)', href: 'https://x.com/freeforcharity1' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/freeforcharity/' },
-    { label: 'GitHub', href: 'https://github.com/FreeForCharity/FFC_Single_Page_Template' },
-  ],
-  ein: '46-2471893',
-  foundingDate: '2014',
-  nonprofitStatus: 'https://schema.org/Nonprofit501c3',
-  phone: { display: '(520) 222-8104', tel: '5202228104' },
-  addresses: [
-    {
-      label: 'Main Address',
-      lines: ['4030 Wake Forrest Road', 'Suite 349', 'Raleigh, NC 27609'],
-      mapUrl:
-        'https://www.google.com/maps/search/?api=1&query=4030+Wake+Forrest+Road+Suite+349+Raleigh+NC+27609',
-    },
-    {
-      label: 'PA Office Address',
-      lines: ['301 Science Park Road, Suite 119', 'State College, PA 16803'],
-      mapUrl:
-        'https://www.google.com/maps/place/Free+For+Charity/@40.7768455,-77.8963305,17z/data=!3m1!4b1!4m6!3m5!1s0x89cea944b44a2e01:0x6fc2d6bf09e00a0f!8m2!3d40.7768415!4d-77.8937556!16s%2Fg%2F11vzvbl2d7?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D',
-    },
-  ],
-  guidestar: {
-    profileUrl: 'https://www.guidestar.org/profile/46-2471893',
-    directProfileUrl:
-      'https://www.guidestar.org/profile/shared/bbbe173a-87b9-4af9-a8a2-cae255a95742',
-  },
+  social: [],
+  // Pre-501(c)(3) — no EIN or determination yet; the footer hides these
+  // while empty. Fill in when the IRS determination arrives.
+  ein: '',
+  phone: { display: '', tel: '' },
+  addresses: [],
+  guidestar: { profileUrl: '', directProfileUrl: '' },
   parentOrg: {
     name: 'Free For Charity',
     url: 'https://freeforcharity.org',

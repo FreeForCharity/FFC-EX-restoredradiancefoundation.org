@@ -116,12 +116,12 @@ Test coverage includes:
 
 ### GitHub Pages Deployment
 
-The site automatically deploys to GitHub Pages via `.github/workflows/nextjs.yml`. The GTM implementation works on both:
+The site automatically deploys to GitHub Pages via `.github/workflows/deploy.yml`. The GTM implementation works on both:
 
-1. **Custom domain**: https://www.ffcworkingsite1.org
+1. **Custom domain**: https://www.restoredradiancefoundation.org
 2. **GitHub Pages**: https://freeforcharity.github.io/FFC_Single_Page_Template/
 
-The GTM ID is hardcoded in the component, so no additional configuration is needed for deployment.
+The GTM ID comes from `src/lib/analytics.config.ts` (`analyticsConfig.gtmId`) — rebranded forks change the container ID there; no per-deployment configuration is needed.
 
 ### Local Development
 

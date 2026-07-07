@@ -35,38 +35,44 @@ const Footer: React.FC = () => {
           <h2 className="text-[28px] text-white">Endorsements</h2>
 
           <div className="space-y-4">
-            <a
-              href={siteConfig.guidestar.profileUrl}
-              aria-label={`View ${siteConfig.name} GuideStar Profile`}
-            >
-              <Image
-                src={assetPath('/Svgs/footerImage.svg')}
-                alt="GuideStar Platinum Seal of Transparency"
-                width={108}
-                height={108}
-              />
-            </a>
-            <Link
-              href={siteConfig.guidestar.directProfileUrl}
-              className="group relative my-4 flex w-full max-w-[230px] items-center justify-between
-                border-2 border-[#2ea3f2] bg-black px-5 py-2.5 text-[#2ea3f2]
-                transition-all duration-300 hover:border-transparent aria-font"
-            >
-              <span className="text-[17px] font-medium leading-tight sm:text-[18px] md:text-[20px] transition-transform duration-300 group-hover:-translate-x-1">
-                Direct GuideStar Profile Link
-              </span>
+            {siteConfig.guidestar.profileUrl && (
+              <a
+                href={siteConfig.guidestar.profileUrl}
+                aria-label={`View ${siteConfig.name} GuideStar Profile`}
+              >
+                <Image
+                  src={assetPath('/Svgs/footerImage.svg')}
+                  alt="GuideStar Platinum Seal of Transparency"
+                  width={108}
+                  height={108}
+                />
+              </a>
+            )}
+            {siteConfig.guidestar.directProfileUrl && (
+              <Link
+                href={siteConfig.guidestar.directProfileUrl}
+                className="group relative my-4 flex w-full max-w-[230px] items-center justify-between
+                  border-2 border-[#2ea3f2] bg-black px-5 py-2.5 text-[#2ea3f2]
+                  transition-all duration-300 hover:border-transparent aria-font"
+              >
+                <span className="text-[17px] font-medium leading-tight sm:text-[18px] md:text-[20px] transition-transform duration-300 group-hover:-translate-x-1">
+                  Direct GuideStar Profile Link
+                </span>
 
-              <FiArrowRight
-                className="h-8 w-8 translate-x-2 opacity-0 text-[#2ea3f2] transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
-                strokeWidth={2}
-              />
-            </Link>
+                <FiArrowRight
+                  className="h-8 w-8 translate-x-2 opacity-0 text-[#2ea3f2] transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                  strokeWidth={2}
+                />
+              </Link>
+            )}
 
-            <p>
-              <span className="font-[500] text-[22px]">
-                {siteConfig.name} EIN: {siteConfig.ein}
-              </span>
-            </p>
+            {siteConfig.ein && (
+              <p>
+                <span className="font-[500] text-[22px]">
+                  {siteConfig.name} EIN: {siteConfig.ein}
+                </span>
+              </p>
+            )}
           </div>
         </div>
 
@@ -173,18 +179,20 @@ const Footer: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start gap-3">
-              <FiPhone className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="font-[500] text-[22px]">Call Us Today</p>
-                <a
-                  href={`tel:${siteConfig.phone.tel}`}
-                  className="font-[500] text-[16px] hover:text-cyan-400 transition-colors aria-font"
-                >
-                  {siteConfig.phone.display}
-                </a>
+            {siteConfig.phone.tel && (
+              <div className="flex items-start gap-3">
+                <FiPhone className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-[500] text-[22px]">Call Us Today</p>
+                  <a
+                    href={`tel:${siteConfig.phone.tel}`}
+                    className="font-[500] text-[16px] hover:text-cyan-400 transition-colors aria-font"
+                  >
+                    {siteConfig.phone.display}
+                  </a>
+                </div>
               </div>
-            </div>
+            )}
 
             {siteConfig.addresses.map((address) => (
               <a
@@ -237,7 +245,8 @@ const Footer: React.FC = () => {
       {/* Bottom Bar */}
       <div className="mt-12 py-6 px-4 border-t border-gray-800 text-center text-[18px] font-[500] w-full aria-font">
         <p>
-          © {currentYear} All Rights Are Reserved by {siteConfig.name} a US 501c3 Non Profit
+          © {currentYear} All Rights Are Reserved by {siteConfig.name}
+          {siteConfig.nonprofitStatus ? ' a US 501c3 Non Profit' : ''}
           {siteConfig.parentOrg && (
             <>
               {' | A project of '}

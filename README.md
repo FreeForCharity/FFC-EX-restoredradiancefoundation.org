@@ -258,16 +258,17 @@ The site features two primary CTAs accessible throughout the experience via glob
 
 ## Deployment
 
-- **Live Site**: [https://ffcworkingsite1.org](https://ffcworkingsite1.org)
+- **Live Site**: [https://restoredradiancefoundation.org](https://restoredradiancefoundation.org)
 - **GitHub Pages**: [https://freeforcharity.github.io/FFC_Single_Page_Template/](https://freeforcharity.github.io/FFC_Single_Page_Template/)
 - **Hosting**: GitHub Pages
 - **Deployment**: Automated via GitHub Actions on push to `main` branch
 
 ## Development Status
 
-**Current Status: Production Ready ✅**
+**Current Status: Under Construction 🚧**
 
-The site is live and fully functional with the following features:
+This site is a fresh Restored Radiance Foundation rebrand of the FFC template. The
+platform features below work; charity-specific content is still being populated:
 
 ✅ **Complete and Functional:**
 
@@ -275,11 +276,15 @@ The site is live and fully functional with the following features:
 - SEO optimization (metadata, sitemap, robots.txt)
 - Static site generation and deployment pipeline
 - All 7 policy pages created and linked (Privacy Policy, Cookie Policy, Terms of Service, Donation Policy, Free For Charity Donation Policy, Vulnerability Disclosure Policy, Security Acknowledgements)
-- Social media links configured (Facebook, Twitter/X, LinkedIn, GitHub)
-- Footer links fully functional with proper destinations
-- Contact information complete (email, phone, addresses)
-- Deployed to live domain: [https://ffcworkingsite1.org](https://ffcworkingsite1.org)
+- Deployed to live domain: [https://restoredradiancefoundation.org](https://restoredradiancefoundation.org)
 - Dual deployment: Custom domain and GitHub Pages
+
+🚧 **Awaiting charity content (see CONTENT_REPLACEMENT_GUIDE.md):**
+
+- Mission/hero/programs copy, logo images, and team/testimonials/FAQ data (template samples still shown)
+- Social media links, contact email/phone/address (empty for now — footer hides them)
+- EIN and GuideStar profile once the IRS 501(c)(3) determination arrives (currently Pre-501(c)(3))
+- GTM container and Zeffy/Idealist/Microsoft Forms integrations (still pointing at FFC accounts)
 
 ⚠️ **Known Limitations:**
 
@@ -680,7 +685,7 @@ Both platforms provide identical workflows:
 
 **Coexistence with GitHub Pages:**
 
-- Keep GitHub Pages for production (ffcworkingsite1.org)
+- Keep GitHub Pages for production (restoredradiancefoundation.org)
 - Use Cloudflare Pages or Vercel for PR previews only
 - No conflicts between systems
 
@@ -833,7 +838,7 @@ The site is configured for static export and deployed to GitHub Pages:
 
 **Production:**
 
-- Live at: [https://ffcworkingsite1.org](https://ffcworkingsite1.org)
+- Live at: [https://restoredradiancefoundation.org](https://restoredradiancefoundation.org)
 - GitHub Pages URL: [https://freeforcharity.github.io/FFC_Single_Page_Template/](https://freeforcharity.github.io/FFC_Single_Page_Template/)
 - Deployment: Automatic via GitHub Actions (`.github/workflows/deploy.yml`)
 - Trigger: Push to `main` branch
@@ -871,7 +876,7 @@ We welcome new contributors and believe fresh perspectives are invaluable! **You
 
 #### How to Get Started
 
-1. **Explore the live site:** [https://ffcworkingsite1.org](https://ffcworkingsite1.org)
+1. **Explore the live site:** [https://restoredradiancefoundation.org](https://restoredradiancefoundation.org)
 2. **Test thoroughly:** Try all features, navigation, and responsive behavior
 3. **Document findings:** Create a review issue using our template
 4. **Report issues:** File separate issues for bugs and enhancements you discover
