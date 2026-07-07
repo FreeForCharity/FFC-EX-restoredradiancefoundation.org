@@ -115,21 +115,31 @@ export type SiteConfig = {
 
 export const siteConfig: SiteConfig = {
   name: 'Restored Radiance Foundation',
-  tagline: 'A Free For Charity supported nonprofit',
+  tagline: 'Restorative skincare care for oncology survivors',
   description:
-    'Restored Radiance Foundation is a newly forming nonprofit organization. Our website is under construction while we complete onboarding with Free For Charity.',
+    'Restored Radiance Foundation empowers oncology survivors with safe, science-backed skincare education, restorative facial services, and access to oncology-approved products that support healing during and after cancer treatment. Our website is under construction.',
   shortDescription:
-    'Restored Radiance Foundation is a newly forming nonprofit organization. Website under construction.',
+    'Empowering oncology survivors with science-backed skincare education, restorative care, and support during and after cancer treatment.',
   url: 'https://restoredradiancefoundation.org',
   twitterHandle: '',
   contactEmail: 'security@freeforcharity.org',
-  keywords: ['nonprofit', 'charity', 'Restored Radiance Foundation'],
+  keywords: [
+    'nonprofit',
+    '501c3',
+    'oncology survivors',
+    'cancer recovery',
+    'skincare education',
+    'restorative care',
+    'Restored Radiance Foundation',
+  ],
   themeColor: '#ffffff',
   vulnerabilityDisclosurePath: '/vulnerability-disclosure-policy',
   social: [],
-  // Pre-501(c)(3) — no EIN or determination yet; the footer hides these
-  // while empty. Fill in when the IRS determination arrives.
-  ein: '',
+  // IRS-recognized 501(c)(3) per the charity's onboarding application
+  // (WHMCS client 419). EIN shown in the footer; nonprofitStatus emits
+  // schema.org Nonprofit501c3.
+  ein: '42-2751966',
+  nonprofitStatus: 'https://schema.org/Nonprofit501c3',
   phone: { display: '', tel: '' },
   addresses: [],
   guidestar: { profileUrl: '', directProfileUrl: '' },
