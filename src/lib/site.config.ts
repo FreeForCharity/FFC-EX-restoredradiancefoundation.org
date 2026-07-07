@@ -115,7 +115,7 @@ export type SiteConfig = {
 
 export const siteConfig: SiteConfig = {
   name: 'Restored Radiance Foundation',
-  tagline: 'Restorative skincare care for oncology survivors',
+  tagline: 'Restorative skincare and support for oncology survivors',
   description:
     'Restored Radiance Foundation empowers oncology survivors with safe, science-backed skincare education, restorative facial services, and access to oncology-approved products that support healing during and after cancer treatment. Our website is under construction.',
   shortDescription:
