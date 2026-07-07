@@ -143,11 +143,6 @@ export const siteConfig: SiteConfig = {
   phone: { display: '', tel: '' },
   addresses: [],
   guidestar: { profileUrl: '', directProfileUrl: '' },
-  parentOrg: {
-    name: 'Free For Charity',
-    url: 'https://freeforcharity.org',
-    hubUrl: 'https://freeforcharity.org/hub/',
-  },
   integrations: {
     zeffyDonationUrl: 'https://www.zeffy.com/embed/donation-form/free-for-charity-endowment-fund',
     idealistUrl:
