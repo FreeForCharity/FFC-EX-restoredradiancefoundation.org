@@ -144,7 +144,11 @@ export const siteConfig: SiteConfig = {
   addresses: [],
   guidestar: { profileUrl: '', directProfileUrl: '' },
   integrations: {
-    zeffyDonationUrl: 'https://www.zeffy.com/embed/donation-form/free-for-charity-endowment-fund',
+    // Blank until Restored Radiance Foundation's own Zeffy form exists — never
+    // leave Free For Charity's donation URL here (it would misroute donations if
+    // the embed is re-enabled). The homepage renders a "coming soon" placeholder
+    // while this is empty.
+    zeffyDonationUrl: '',
     idealistUrl:
       'https://www.idealist.org/en/nonprofit/356bfc8e2ae64f83beea4a4e677e99d7-free-for-charity-state-college#opportunities',
     sociableKitEventsWidgetUrl:

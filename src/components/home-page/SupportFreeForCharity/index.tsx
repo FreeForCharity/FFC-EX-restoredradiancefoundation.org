@@ -36,7 +36,7 @@ const Index = () => {
             <div
               className="relative w-full max-w-[500px] h-[600px] bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center justify-center text-center px-[20px]"
               role="region"
-              aria-label="Donation form"
+              aria-label="Donations coming soon"
             >
               <p className="font-[500] text-[25px] leading-[150%] tracking-[0] lato-font mb-[12px]">
                 Online donations are coming soon.
