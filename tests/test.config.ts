@@ -59,8 +59,11 @@ export const testConfig = {
    */
   // Sourced from siteConfig.social (single source of truth) so the tests
   // track whatever this fork configures — including an empty list for a
-  // charity with no social presence yet.
-  socialLinks: siteConfig.social.map((s) => ({ url: s.href, ariaLabel: s.label })),
+  // charity with no social presence yet. Entries disabled via an empty href
+  // are excluded, mirroring the footer's own filter.
+  socialLinks: siteConfig.social
+    .filter((s) => s.href)
+    .map((s) => ({ url: s.href, ariaLabel: s.label })),
 
   /**
    * Copyright Configuration
