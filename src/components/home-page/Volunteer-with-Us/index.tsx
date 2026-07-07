@@ -14,16 +14,25 @@ const index = () => {
           Your time and skills can create a lasting impact. Whether you&apos;re helping with
           outreach, education, or supporting survivors, your contributions further our mission.
         </p>
-        <a
-          href={siteConfig.integrations.idealistUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-[216px] h-[62px] top-[261px] left-[611px] rounded-[27px] 
-             flex items-center justify-center px-[32px] py-[18px] gap-[10px] 
+        {siteConfig.integrations.idealistUrl ? (
+          <a
+            href={siteConfig.integrations.idealistUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-[216px] h-[62px] top-[261px] left-[611px] rounded-[27px]
+             flex items-center justify-center px-[32px] py-[18px] gap-[10px]
              text-[#113563] mx-auto mt-[30px] bg-white text-[20px] font-[400] font-sans text-center lato-font"
-        >
-          Volunteer
-        </a>
+          >
+            Volunteer
+          </a>
+        ) : (
+          <span
+            aria-disabled="true"
+            className="w-[280px] h-[62px] rounded-[27px] flex items-center justify-center px-[32px] py-[18px] gap-[10px] text-[#113563] mx-auto mt-[30px] bg-white/80 text-[20px] font-[400] font-sans text-center cursor-default lato-font"
+          >
+            Volunteering — coming soon
+          </span>
+        )}
 
         <Image
           src={assetPath('/Images/Volunteer-with-Us.webp')}

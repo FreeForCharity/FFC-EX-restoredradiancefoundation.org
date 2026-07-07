@@ -149,8 +149,11 @@ export const siteConfig: SiteConfig = {
     // the embed is re-enabled). The homepage renders a "coming soon" placeholder
     // while this is empty.
     zeffyDonationUrl: '',
-    idealistUrl:
-      'https://www.idealist.org/en/nonprofit/356bfc8e2ae64f83beea4a4e677e99d7-free-for-charity-state-college#opportunities',
+    // Blank until Restored Radiance Foundation has its own Idealist listing —
+    // never leave Free For Charity's here (it would send volunteers to the wrong
+    // org). The Volunteer section shows a non-clickable "coming soon" state while
+    // this is empty.
+    idealistUrl: '',
     sociableKitEventsWidgetUrl:
       'https://widgets.sociablekit.com/facebook-page-events/iframe/25631700',
     microsoftFormUrl: 'https://forms.office.com/r/vePxGq6JqG',
