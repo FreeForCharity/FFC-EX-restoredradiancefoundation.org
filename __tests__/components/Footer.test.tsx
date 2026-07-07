@@ -42,10 +42,13 @@ describe('Footer component', () => {
     expect(screen.getByText(new RegExp(currentYear.toString()))).toBeInTheDocument()
   })
 
-  it('should have GuideStar profile link', () => {
+  it('shows the GuideStar profile link only when configured', () => {
     render(<Footer />)
-    const guidestarLink = screen.getByText(/GuideStar Profile/i)
-    expect(guidestarLink).toBeInTheDocument()
+    if (siteConfig.guidestar.directProfileUrl) {
+      expect(screen.getByText(/GuideStar Profile/i)).toBeInTheDocument()
+    } else {
+      expect(screen.queryByText(/GuideStar Profile/i)).not.toBeInTheDocument()
+    }
   })
 
   it('should have email contact link', () => {
@@ -56,18 +59,27 @@ describe('Footer component', () => {
     expect(emailLink).toBeDefined()
   })
 
-  it('renders the EIN from siteConfig', () => {
+  it('renders the EIN line only when siteConfig.ein is set', () => {
     render(<Footer />)
-    expect(screen.getByText(`${siteConfig.name} EIN: ${siteConfig.ein}`)).toBeInTheDocument()
+    if (siteConfig.ein) {
+      expect(screen.getByText(`${siteConfig.name} EIN: ${siteConfig.ein}`)).toBeInTheDocument()
+    } else {
+      expect(screen.queryByText(/EIN:/)).not.toBeInTheDocument()
+    }
   })
 
-  it('renders the phone number from siteConfig as a tel link', () => {
+  it('renders the phone number as a tel link only when configured', () => {
     render(<Footer />)
     const telLink = screen
       .getAllByRole('link')
       .find((link) => link.getAttribute('href') === `tel:${siteConfig.phone.tel}`)
-    expect(telLink).toBeDefined()
-    expect(telLink).toHaveTextContent(siteConfig.phone.display)
+    if (siteConfig.phone.tel) {
+      expect(telLink).toBeDefined()
+      expect(telLink).toHaveTextContent(siteConfig.phone.display)
+    } else {
+      expect(telLink).toBeUndefined()
+      expect(screen.queryByText('Call Us Today')).not.toBeInTheDocument()
+    }
   })
 
   it('renders every configured office address with a maps link', () => {
