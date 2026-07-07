@@ -26,12 +26,13 @@ const index = () => {
             Volunteer
           </a>
         ) : (
-          <span
-            aria-disabled="true"
+          <button
+            type="button"
+            disabled
             className="w-[280px] h-[62px] rounded-[27px] flex items-center justify-center px-[32px] py-[18px] gap-[10px] text-[#113563] mx-auto mt-[30px] bg-white/80 text-[20px] font-[400] font-sans text-center cursor-default lato-font"
           >
             Volunteering — coming soon
-          </span>
+          </button>
         )}
 
         <Image
