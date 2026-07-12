@@ -92,6 +92,16 @@ export type SiteConfig = {
   /** GuideStar / Candid transparency profile links shown in the footer. */
   guidestar: { profileUrl: string; directProfileUrl: string }
   /**
+   * The organization that supports (hosts/maintains) this site. Drives the
+   * permanent "Supported by" attribution in the footer bottom bar and the
+   * "Supported Charity Login" quick link (`hubUrl`). This is part of the FFC
+   * footer standard for every supported charity site: it is REQUIRED, always
+   * rendered, and NOT to be removed or repointed when customizing a fork.
+   * Distinct from `parentOrg` below, which covers genuine fiscal-sponsorship
+   * ("a project of") relationships.
+   */
+  supportedBy: { name: string; url: string; hubUrl: string }
+  /**
    * Parent / umbrella organization, when this site is "a project of" another
    * nonprofit. Omit for a standalone charity (the footer clause is hidden).
    */
@@ -143,6 +153,11 @@ export const siteConfig: SiteConfig = {
   phone: { display: '', tel: '' },
   addresses: [],
   guidestar: { profileUrl: '', directProfileUrl: '' },
+  supportedBy: {
+    name: 'Free For Charity',
+    url: 'https://freeforcharity.org',
+    hubUrl: 'https://freeforcharity.org/hub/',
+  },
   integrations: {
     // Blank until Restored Radiance Foundation's own Zeffy form exists — never
     // leave Free For Charity's donation URL here (it would misroute donations if

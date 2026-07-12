@@ -33,6 +33,25 @@ test.describe('Footer Copyright Notice', () => {
     await expect(footerText).toContainText(testConfig.copyright.text)
   })
 
+  test('should display the permanent "Supported by" attribution', async ({ page }) => {
+    // FFC footer standard: every supported charity site carries a permanent
+    // "Supported by <org>" link in the bottom bar. Unlike the parent-org
+    // clause below, this is always rendered — it must never be skipped.
+    await page.goto('/')
+
+    const attributionLink = page
+      .locator(
+        `footer p:has-text("${testConfig.copyright.searchText}") a[href="${testConfig.copyright.supportedByUrl}"]`
+      )
+      .first()
+
+    await expect(attributionLink).toBeVisible()
+    await expect(attributionLink).toContainText(testConfig.copyright.supportedByText)
+
+    const footerText = page.locator(`footer p:has-text("${testConfig.copyright.searchText}")`)
+    await expect(footerText).toContainText(`Supported by ${testConfig.copyright.supportedByText}`)
+  })
+
   test('should display link to organization website in copyright notice', async ({ page }) => {
     // The footer only renders the "A project of" parent-org link when a parent
     // org is configured. Skip this assertion for standalone charities.
