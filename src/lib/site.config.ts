@@ -144,7 +144,13 @@ export const siteConfig: SiteConfig = {
   ],
   themeColor: '#5D4859',
   vulnerabilityDisclosurePath: '/vulnerability-disclosure-policy',
-  social: [{ label: 'Instagram', href: 'https://www.instagram.com/restoredradiancefoundation' }],
+  social: [
+    {
+      label: 'Facebook',
+      href: 'https://www.facebook.com/people/Restored-Radiance-Foundation/61591603092501/',
+    },
+    { label: 'Instagram', href: 'https://www.instagram.com/restoredradiancefoundation' },
+  ],
   // IRS-recognized 501(c)(3) per the charity's onboarding application
   // (WHMCS client 419). EIN shown in the footer; nonprofitStatus emits
   // schema.org Nonprofit501c3.
