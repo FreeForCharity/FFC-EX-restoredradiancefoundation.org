@@ -74,6 +74,10 @@ export const testConfig = {
     // once siteConfig.nonprofitStatus is set (i.e. after IRS determination).
     text: `All Rights Are Reserved by ${siteConfig.name}${siteConfig.nonprofitStatus ? ' a US 501c3 Non Profit' : ''}`,
     searchText: 'All Rights Are Reserved',
+    // The permanent "Supported by" attribution (FFC footer standard) — sourced
+    // from siteConfig.supportedBy, which is required and always rendered.
+    supportedByUrl: siteConfig.supportedBy.url,
+    supportedByText: siteConfig.supportedBy.name,
     // Sourced from siteConfig so the parent-org link expectations track the
     // footer (which now shows the org name, not the raw URL, as link text).
     linkUrl: siteConfig.parentOrg?.url ?? '',

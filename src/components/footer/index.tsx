@@ -90,10 +90,11 @@ const Footer: React.FC = () => {
                 { name: 'Donate', href: '/#donate' },
                 { name: 'Apply Now', href: '/#apply' },
                 { name: 'FAQ', href: '/#faq' },
-                // Only shown when this site is a project of a parent org with a hub.
-                ...(siteConfig.parentOrg?.hubUrl
-                  ? [{ name: 'Supported Charity Login', href: siteConfig.parentOrg.hubUrl }]
-                  : []),
+                // FFC footer standard: every supported charity site links back
+                // to the supporting org's hub. Always rendered — keep this
+                // entry when customizing a fork. (No "Team" entry — that
+                // section isn't built out on this site yet.)
+                { name: 'Supported Charity Login', href: siteConfig.supportedBy.hubUrl },
               ].map((link) => {
                 const isExternal = link.href.startsWith('http')
                 return (
@@ -242,6 +243,15 @@ const Footer: React.FC = () => {
         <p>
           © {currentYear} All Rights Are Reserved by {siteConfig.name}
           {siteConfig.nonprofitStatus ? ' a US 501c3 Non Profit' : ''}
+          {/* FFC footer standard: the permanent "Supported by" attribution.
+              Always rendered — do NOT remove or hide it when customizing. */}
+          {' | Supported by '}
+          <Link
+            href={siteConfig.supportedBy.url}
+            className="underline text-[#CFC5B2] hover:text-[#CFC5B2] transition-colors"
+          >
+            {siteConfig.supportedBy.name}
+          </Link>
           {siteConfig.parentOrg && (
             <>
               {' | A project of '}
