@@ -6,7 +6,7 @@ const CharityHeroBackground = () => {
   return (
     <div id="hero" className="relative w-full pb-[100px] overflow-hidden">
       {/* 1. Base Blue Layer */}
-      <div className="absolute inset-0 bg-[#2E6F8E]" />
+      <div className="absolute inset-0 bg-[#5D4859]" />
       {/* 2. ULTRA-THIN White Diagonal Strip - HALF HEIGHT */}
       <div
         className="absolute inset-0 bg-white"
@@ -17,7 +17,7 @@ const CharityHeroBackground = () => {
 
       {/* 3. Orange Bottom-Right Section - Starts exactly where white ends */}
       <div
-        className="absolute inset-0 bg-[#E4731E]"
+        className="absolute inset-0 bg-[#D4A64A]"
         style={{
           clipPath: 'polygon(0% 111%, 100% 35%, 100% 100%, 0% 100%)',
         }}
@@ -33,21 +33,21 @@ const CharityHeroBackground = () => {
             during and after cancer treatment.
           </p>
           <a
-            href="#volunteer"
-            className="top-[378px] w-[300px] lg:w-[351px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#113563] text-[20px] font-[400] leading-[100%] mb-[10px] whitespace-nowrap lato-font"
+            href="#apply"
+            className="top-[378px] w-[300px] lg:w-[351px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#5D4859] text-[20px] font-[400] leading-[100%] mb-[10px] whitespace-nowrap lato-font"
           >
-            Volunteer
+            Apply Now
           </a>
           <div className="flex gap-[5px]">
             <a
               href="#donate"
-              className="top-[442px] w-[130px] lg:w-[173px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#113563] text-[20px] font-[400] leading-[100%] whitespace-nowrap lato-font"
+              className="top-[442px] w-[130px] lg:w-[173px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#5D4859] text-[20px] font-[400] leading-[100%] whitespace-nowrap lato-font"
             >
               Donate
             </a>
             <a
               href="#programs"
-              className="top-[442px] w-[173px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#113563] text-[20px] font-[400] leading-[100%] whitespace-nowrap lato-font"
+              className="top-[442px] w-[173px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#5D4859] text-[20px] font-[400] leading-[100%] whitespace-nowrap lato-font"
             >
               Our Programs
             </a>

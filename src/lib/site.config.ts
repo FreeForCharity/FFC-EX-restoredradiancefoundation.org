@@ -1,5 +1,5 @@
 /**
- * Central site configuration for Free For Charity template sites.
+ * Central site configuration for this Free-For-Charity-supported site.
  *
  * EDIT THIS FILE to customize a new FFC-supported nonprofit site.
  * Most values that vary between sites flow from here so individual
@@ -65,7 +65,7 @@ export type SiteConfig = {
   vulnerabilityDisclosurePath: string
   /** Social links displayed in the footer. */
   social: readonly SiteSocialLink[]
-  /** IRS Employer Identification Number (tax ID), e.g. '46-2471893'. */
+  /** IRS Employer Identification Number (tax ID), e.g. 'XX-XXXXXXX'. */
   ein: string
   /**
    * Year (or ISO date) the organization was founded, e.g. '2014'.
@@ -104,8 +104,8 @@ export type SiteConfig = {
   integrations: {
     /** Zeffy donation-form embed URL (the iframe `src`). */
     zeffyDonationUrl: string
-    /** Idealist volunteer-opportunities profile URL. */
-    idealistUrl: string
+    /** Jotform "apply for care" application form URL. */
+    applicationFormUrl: string
     /** SociableKit Facebook-events widget iframe URL. */
     sociableKitEventsWidgetUrl: string
     /** Microsoft Forms application-form URL (https://forms.office.com/r/<id>). */
@@ -122,7 +122,7 @@ export const siteConfig: SiteConfig = {
     'Empowering oncology survivors with science-backed skincare education, restorative care, and support during and after cancer treatment.',
   url: 'https://restoredradiancefoundation.org',
   twitterHandle: '',
-  contactEmail: 'security@freeforcharity.org',
+  contactEmail: 'rrfskin@gmail.com',
   keywords: [
     'nonprofit',
     '501c3',
@@ -132,28 +132,27 @@ export const siteConfig: SiteConfig = {
     'restorative care',
     'Restored Radiance Foundation',
   ],
-  themeColor: '#ffffff',
+  themeColor: '#5D4859',
   vulnerabilityDisclosurePath: '/vulnerability-disclosure-policy',
-  social: [],
+  social: [{ label: 'Instagram', href: 'https://www.instagram.com/restoredradiancefoundation' }],
   // IRS-recognized 501(c)(3) per the charity's onboarding application
   // (WHMCS client 419). EIN shown in the footer; nonprofitStatus emits
   // schema.org Nonprofit501c3.
   ein: '42-2751966',
   nonprofitStatus: 'https://schema.org/Nonprofit501c3',
-  phone: { display: '', tel: '' },
+  phone: { display: '(469) 379-2789', tel: '4693792789' },
   addresses: [],
   guidestar: { profileUrl: '', directProfileUrl: '' },
   integrations: {
-    // Blank until Restored Radiance Foundation's own Zeffy form exists — never
-    // leave Free For Charity's donation URL here (it would misroute donations if
-    // the embed is re-enabled). The homepage renders a "coming soon" placeholder
-    // while this is empty.
-    zeffyDonationUrl: '',
-    // Blank until Restored Radiance Foundation has its own Idealist listing —
-    // never leave Free For Charity's here (it would send volunteers to the wrong
-    // org). The Volunteer section shows a non-clickable "coming soon" state while
-    // this is empty.
-    idealistUrl: '',
+    // Restored Radiance Foundation's live Zeffy donation form. Uses the
+    // /embed/ path (rather than the /en-US/donation-form/ page URL) since
+    // that's the iframe-embeddable route; the CSP frame-src already
+    // allow-lists zeffy.com for this.
+    zeffyDonationUrl:
+      'https://www.zeffy.com/embed/donation-form/cancer-took-a-lot-lets-help-survivors-reclaim-their-skin-and-their-confidence',
+    // Restored Radiance Foundation's live Jotform application form, linked
+    // from the Apply Now section.
+    applicationFormUrl: 'https://form.jotform.com/261858987137072',
     sociableKitEventsWidgetUrl:
       'https://widgets.sociablekit.com/facebook-page-events/iframe/25631700',
     microsoftFormUrl: 'https://forms.office.com/r/vePxGq6JqG',

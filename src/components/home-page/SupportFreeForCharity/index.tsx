@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { assetPath } from '@/lib/assetPath'
+import { siteConfig } from '@/lib/site.config'
 
 const Index = () => {
   return (
@@ -31,20 +32,38 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Right side: Donation placeholder */}
+          {/* Right side: Donation form */}
           <div className="w-full lg:w-[50%] flex justify-center">
-            <div
-              className="relative w-full max-w-[500px] h-[600px] bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center justify-center text-center px-[20px]"
-              role="region"
-              aria-label="Donations coming soon"
-            >
-              <p className="font-[500] text-[25px] leading-[150%] tracking-[0] lato-font mb-[12px]">
-                Online donations are coming soon.
-              </p>
-              <p className="font-[400] text-[18px] leading-[150%] tracking-[0] lato-font">
-                Check back shortly to support our work.
-              </p>
-            </div>
+            {siteConfig.integrations.zeffyDonationUrl ? (
+              <div className="relative w-full max-w-[500px] h-[600px] rounded-lg shadow-lg overflow-hidden">
+                {/* CSS-only loading placeholder shown until the lazy iframe loads. */}
+                <div
+                  className="absolute inset-0 animate-pulse bg-gray-100 pointer-events-none motion-reduce:animate-none"
+                  aria-hidden="true"
+                />
+                <iframe
+                  src={siteConfig.integrations.zeffyDonationUrl}
+                  title="Donation form powered by Zeffy"
+                  className="relative w-full h-full"
+                  frameBorder={0}
+                  loading="lazy"
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-top-navigation-by-user-activation"
+                ></iframe>
+              </div>
+            ) : (
+              <div
+                className="relative w-full max-w-[500px] h-[600px] bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center justify-center text-center px-[20px]"
+                role="region"
+                aria-label="Donations coming soon"
+              >
+                <p className="font-[500] text-[25px] leading-[150%] tracking-[0] lato-font mb-[12px]">
+                  Online donations are coming soon.
+                </p>
+                <p className="font-[400] text-[18px] leading-[150%] tracking-[0] lato-font">
+                  Check back shortly to support our work.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

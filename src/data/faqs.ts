@@ -14,8 +14,8 @@ export const faqs: Faq[] = [
     answer: `Yes. Restored Radiance Foundation is a recognized 501(c)(3) nonprofit organization (EIN 42-2751966), and donations are tax-deductible to the extent allowed by law.`,
   },
   {
-    question: 'How can I get involved?',
-    answer: `We welcome volunteers and partners. Use the Volunteer section to reach out and share how you'd like to help.`,
+    question: 'How do I apply for care?',
+    answer: `Use the Apply Now section to fill out our application form. We'll follow up to see how we can help.`,
   },
   {
     question: "The site is still being built out — what's next?",

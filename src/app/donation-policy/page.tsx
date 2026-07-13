@@ -9,7 +9,7 @@ const CANONICAL_PATH = '/donation-policy'
 // per-page OG/Twitter handling is documented in src/lib/page-metadata.ts.
 export const metadata: Metadata = pageMetadata({
   title: PAGE_NAME,
-  description: 'Donation Policy for Free For Charity website',
+  description: 'Donation Policy for Restored Radiance Foundation website',
   canonical: CANONICAL_PATH,
 })
 
@@ -31,21 +31,21 @@ export default function DonationPolicy() {
             Tax Deductibility
           </h2>
           <p>
-            Free For Charity is a qualified 501(c)(3) nonprofit organization (EIN: 46-2471893).
-            Donations are tax-deductible to the full extent allowed by law.
+            Restored Radiance Foundation is a qualified 501(c)(3) nonprofit organization (EIN:
+            42-2751966). Donations are tax-deductible to the full extent allowed by law.
           </p>
 
           <h2 className="font-[var(--font-faustina)] text-[32px] leading-[40px] mt-8 mb-4">
             Use of Donations
           </h2>
           <p>
-            Donations support our mission to reduce costs and increase revenues for nonprofits by
-            providing:
+            Donations support our mission to provide skincare education, restorative care, and
+            oncology-approved products to oncology survivors by funding:
           </p>
           <ul>
-            <li>Free domain registration and hosting services</li>
-            <li>Technology consultation and support</li>
-            <li>Volunteer coordination and training</li>
+            <li>Skincare education programs</li>
+            <li>Restorative facial treatment services</li>
+            <li>Oncology-approved skincare products</li>
             <li>Administrative costs necessary to operate our programs</li>
           </ul>
 
@@ -79,11 +79,11 @@ export default function DonationPolicy() {
           <p>For questions about donations or this policy, please contact us at:</p>
           <p>
             Email:{' '}
-            <a href="mailto:clarkemoyer@freeforcharity.org" className="text-primary underline">
-              clarkemoyer@freeforcharity.org
+            <a href="mailto:rrfskin@gmail.com" className="text-primary underline">
+              rrfskin@gmail.com
             </a>
             <br />
-            Phone: (520) 222-8104
+            Phone: (469) 379-2789
           </p>
         </div>
       </div>
