@@ -3,7 +3,7 @@ import Hero from '@/components/home-page/Hero'
 import Mission from '@/components/home-page/Mission'
 import SupportSection from '@/components/home-page/SupportFreeForCharity'
 import OurPrograms from '@/components/home-page/Our-Programs'
-import VolunteerwithUs from '@/components/home-page/Volunteer-with-Us'
+import ApplyNow from '@/components/home-page/Apply-Now'
 import FrequentlyAskedQuestions from '@/components/home-page/FrequentlyAskedQuestions'
 
 const index = () => {
@@ -12,7 +12,7 @@ const index = () => {
       <Hero />
       <Mission />
       <OurPrograms />
-      <VolunteerwithUs />
+      <ApplyNow />
       <SupportSection />
       <FrequentlyAskedQuestions />
     </div>

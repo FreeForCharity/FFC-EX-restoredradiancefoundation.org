@@ -27,7 +27,7 @@ const Header: React.FC = () => {
       { label: 'Home', path: '/#hero' },
       { label: 'Mission', path: '/#mission' },
       { label: 'Programs', path: '/#programs' },
-      { label: 'Volunteer', path: '/#volunteer' },
+      { label: 'Apply Now', path: '/#apply' },
       { label: 'Donate', path: '/#donate' },
       { label: 'FAQ', path: '/#faq' },
     ],
@@ -99,10 +99,10 @@ const Header: React.FC = () => {
             >
               <Link href="/" onClick={handleLinkClick} className="block">
                 <Image
-                  src={assetPath('/Images/logo.webp')}
+                  src={assetPath('/Images/logo-mark.webp')}
                   alt={siteConfig.name}
-                  width={686}
-                  height={234}
+                  width={460}
+                  height={863}
                   priority
                   className={`w-auto max-w-none object-contain transition-all duration-300 ${
                     isScrolled ? 'h-7' : 'h-11'
@@ -127,7 +127,7 @@ const Header: React.FC = () => {
                           onClick={handleLinkClick}
                           className={`flex items-center px-3 py-2 text-[14px] transition-colors duration-200 ${
                             isActive(item.path)
-                              ? 'text-blue-600'
+                              ? 'text-[#D4A64A]'
                               : 'text-gray-600 hover:text-gray-500'
                           }`}
                         >
@@ -142,7 +142,7 @@ const Header: React.FC = () => {
                 <div className="hidden lg:flex items-center">
                   <button
                     onClick={handleSearchToggle}
-                    className="p-2 text-gray-600 hover:text-blue-600 transition-colors"
+                    className="p-2 text-gray-600 hover:text-[#D4A64A] transition-colors"
                     aria-label="Search"
                   >
                     <LiaSearchSolid className="h-5 w-5 cursor-pointer" />
@@ -152,7 +152,7 @@ const Header: React.FC = () => {
                 {/* Mobile Menu Button */}
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="lg:hidden p-2 text-gray-600 hover:text-blue-600"
+                  className="lg:hidden p-2 text-gray-600 hover:text-[#D4A64A]"
                   aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
                   aria-expanded={isMobileMenuOpen}
                   aria-controls="mobile-menu"
@@ -197,7 +197,7 @@ const Header: React.FC = () => {
           }`}
         >
           <div
-            className={`max-w-[700px] mx-auto px-6 py-4 bg-white border-t-[3px] border-[#2EA3F2] shadow-[0_2px_5px_rgba(0,0,0,0.1)] max-h-[80vh] overflow-auto`}
+            className={`max-w-[700px] mx-auto px-6 py-4 bg-white border-t-[3px] border-[#5D4859] shadow-[0_2px_5px_rgba(0,0,0,0.1)] max-h-[80vh] overflow-auto`}
           >
             <ul className="space-y-2">
               {menuItems.map((item, index) => (
@@ -207,7 +207,7 @@ const Header: React.FC = () => {
                     onClick={handleLinkClick}
                     className={`block px-4 py-2 rounded-lg text-sm font-[600] ${
                       isActive(item.path)
-                        ? 'bg-blue-50 text-blue-600'
+                        ? 'bg-[#F3E8D5] text-[#D4A64A]'
                         : 'text-gray-700 hover:bg-gray-100'
                     }`}
                   >

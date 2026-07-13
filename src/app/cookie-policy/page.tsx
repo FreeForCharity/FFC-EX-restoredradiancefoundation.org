@@ -10,7 +10,7 @@ const CANONICAL_PATH = '/cookie-policy'
 // per-page OG/Twitter handling is documented in src/lib/page-metadata.ts.
 export const metadata: Metadata = pageMetadata({
   title: PAGE_NAME,
-  description: 'Cookie Policy for Free For Charity website',
+  description: 'Cookie Policy for Restored Radiance Foundation website',
   canonical: CANONICAL_PATH,
 })
 
@@ -502,17 +502,14 @@ export default function CookiePolicy() {
           <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
               <strong>Email:</strong>{' '}
-              <a href="mailto:privacy@freeforcharity.org" className="text-blue-600 underline">
-                privacy@freeforcharity.org
+              <a href="mailto:rrfskin@gmail.com" className="text-blue-600 underline">
+                rrfskin@gmail.com
               </a>
             </li>
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Emergency Contact:</strong> Clarke Moyer
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
               <strong>Phone:</strong>{' '}
-              <a href="tel:520-222-8104" className="text-blue-600 underline">
-                520-222-8104
+              <a href="tel:4693792789" className="text-blue-600 underline">
+                (469) 379-2789
               </a>
             </li>
           </ul>

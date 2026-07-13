@@ -9,7 +9,7 @@ const CANONICAL_PATH = '/privacy-policy'
 // per-page OG/Twitter handling is documented in src/lib/page-metadata.ts.
 export const metadata: Metadata = pageMetadata({
   title: PAGE_NAME,
-  description: 'Privacy Policy for Free For Charity website',
+  description: 'Privacy Policy for Restored Radiance Foundation website',
   canonical: CANONICAL_PATH,
 })
 
@@ -36,10 +36,10 @@ export default function PrivacyPolicy() {
             </li>
           </ol>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            At Free for Charity, accessible from https://freeforcharity.org, your privacy is one of
-            our primary concerns. This Privacy Policy document contains types of information we
-            collect and record, and how we use it. By using our website, you hereby consent to our
-            Privacy Policy and agree to its terms.
+            At Restored Radiance Foundation, accessible from https://restoredradiancefoundation.org,
+            your privacy is one of our primary concerns. This Privacy Policy document contains types
+            of information we collect and record, and how we use it. By using our website, you
+            hereby consent to our Privacy Policy and agree to its terms.
           </p>
 
           {/* Section 2 */}
@@ -51,7 +51,7 @@ export default function PrivacyPolicy() {
             </li>
           </ol>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            Our website address is: https://freeforcharity.org
+            Our website address is: https://restoredradiancefoundation.org
           </p>
 
           {/* Section 3 */}
@@ -163,7 +163,7 @@ export default function PrivacyPolicy() {
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
               <strong>Additional Third-Party Services:</strong> Microsoft Forms may use additional
               services (including HubSpot) for form analytics and feedback collection. These are
-              controlled by Microsoft, not Free For Charity.
+              controlled by Microsoft, not Restored Radiance Foundation.
             </li>
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
               <strong>Privacy Policy:</strong> Review Microsoft&apos;s privacy practices at{' '}
@@ -331,7 +331,7 @@ export default function PrivacyPolicy() {
             </li>
           </ul>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            To exercise these rights, please contact us at 520-222-8104.
+            To exercise these rights, please contact us at (469) 379-2789.
           </p>
 
           {/* Section 8 */}
@@ -465,10 +465,10 @@ export default function PrivacyPolicy() {
           <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
               <strong>Email:</strong>{' '}
-              <a href="mailto:clarkemoyer@freeforcharity.org" className="text-[#0062CC] underline">
-                clarkemoyer@freeforcharity.org
+              <a href="mailto:rrfskin@gmail.com" className="text-[#0062CC] underline">
+                rrfskin@gmail.com
               </a>{' '}
-              520-222-8104
+              (469) 379-2789
             </li>
           </ul>
 
@@ -490,11 +490,11 @@ export default function PrivacyPolicy() {
           </p>
           <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Contact DPO:</strong> Clarke Moyer{' '}
-              <a href="mailto:clarkemoyer@freeforcharity.org" className="text-[#0062CC] underline">
-                clarkemoyer@freeforcharity.org
+              <strong>Contact:</strong>{' '}
+              <a href="mailto:rrfskin@gmail.com" className="text-[#0062CC] underline">
+                rrfskin@gmail.com
               </a>{' '}
-              520-222-8104
+              (469) 379-2789
             </li>
           </ul>
 

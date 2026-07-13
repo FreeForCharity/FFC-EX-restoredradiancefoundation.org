@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FiMail, FiPhone, FiMapPin, FiArrowRight, FiLink2 } from 'react-icons/fi'
-import { FaFacebookF, FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import { FaFacebookF, FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import type { IconType } from 'react-icons'
 
@@ -22,6 +22,7 @@ const socialIconByLabel: Record<string, IconType> = {
   X: FaXTwitter,
   LinkedIn: FaLinkedinIn,
   GitHub: FaGithub,
+  Instagram: FaInstagram,
 }
 
 const Footer: React.FC = () => {
@@ -52,7 +53,7 @@ const Footer: React.FC = () => {
               <Link
                 href={siteConfig.guidestar.directProfileUrl}
                 className="group relative my-4 flex w-full max-w-[230px] items-center justify-between
-                  border-2 border-[#2ea3f2] bg-black px-5 py-2.5 text-[#2ea3f2]
+                  border-2 border-[#CFC5B2] bg-black px-5 py-2.5 text-[#CFC5B2]
                   transition-all duration-300 hover:border-transparent aria-font"
               >
                 <span className="text-[17px] font-medium leading-tight sm:text-[18px] md:text-[20px] transition-transform duration-300 group-hover:-translate-x-1">
@@ -60,7 +61,7 @@ const Footer: React.FC = () => {
                 </span>
 
                 <FiArrowRight
-                  className="h-8 w-8 translate-x-2 opacity-0 text-[#2ea3f2] transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                  className="h-8 w-8 translate-x-2 opacity-0 text-[#CFC5B2] transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
                   strokeWidth={2}
                 />
               </Link>
@@ -86,14 +87,13 @@ const Footer: React.FC = () => {
                 { name: 'Home', href: '/#hero' },
                 { name: 'Mission', href: '/#mission' },
                 { name: 'Programs', href: '/#programs' },
-                { name: 'Events', href: '/#events' },
                 { name: 'Donate', href: '/#donate' },
-                { name: 'Volunteer', href: '/#volunteer' },
+                { name: 'Apply Now', href: '/#apply' },
                 { name: 'FAQ', href: '/#faq' },
-                { name: 'Team', href: '/#team' },
                 // FFC footer standard: every supported charity site links back
                 // to the supporting org's hub. Always rendered — keep this
-                // entry when customizing a fork.
+                // entry when customizing a fork. (No "Team" entry — that
+                // section isn't built out on this site yet.)
                 { name: 'Supported Charity Login', href: siteConfig.supportedBy.hubUrl },
               ].map((link) => {
                 const isExternal = link.href.startsWith('http')
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
                       href={link.href}
                       target={isExternal ? '_blank' : undefined}
                       rel={isExternal ? 'noopener noreferrer' : undefined}
-                      className="hover:text-[#F58C23] hover:tracking-widest transition-all text-[16px] font-[500]"
+                      className="hover:text-[#D4A64A] hover:tracking-widest transition-all text-[16px] font-[500]"
                     >
                       {link.name}
                     </Link>
@@ -120,10 +120,6 @@ const Footer: React.FC = () => {
                 {[
                   {
                     name: `${siteConfig.name} Donation Policy`,
-                    href: '/free-for-charity-donation-policy',
-                  },
-                  {
-                    name: 'Donation Policy',
                     href: '/donation-policy',
                   },
                   {
@@ -150,7 +146,7 @@ const Footer: React.FC = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="hover:text-[#F58C23] hover:tracking-widest transition-all text-[16px] font-[500]"
+                      className="hover:text-[#D4A64A] hover:tracking-widest transition-all text-[16px] font-[500]"
                     >
                       {link.name}
                     </Link>
@@ -167,12 +163,12 @@ const Footer: React.FC = () => {
 
           <div className="space-y-4 text-sm">
             <div className="flex items-start gap-3">
-              <FiMail className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+              <FiMail className="w-10 h-10 text-[#D4A64A] flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-[500] text-[22px]">E-mail</p>
                 <a
                   href={`mailto:${siteConfig.contactEmail}`}
-                  className="font-[500] text-[15px] hover:text-cyan-400 transition-colors break-all aria-font"
+                  className="font-[500] text-[15px] hover:text-[#CFC5B2] transition-colors break-all aria-font"
                 >
                   {siteConfig.contactEmail}
                 </a>
@@ -181,12 +177,12 @@ const Footer: React.FC = () => {
 
             {siteConfig.phone.tel && (
               <div className="flex items-start gap-3">
-                <FiPhone className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+                <FiPhone className="w-10 h-10 text-[#D4A64A] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-[500] text-[22px]">Call Us Today</p>
                   <a
                     href={`tel:${siteConfig.phone.tel}`}
-                    className="font-[500] text-[16px] hover:text-cyan-400 transition-colors aria-font"
+                    className="font-[500] text-[16px] hover:text-[#CFC5B2] transition-colors aria-font"
                   >
                     {siteConfig.phone.display}
                   </a>
@@ -202,7 +198,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 hover:opacity-80 transition-opacity"
               >
-                <FiMapPin className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+                <FiMapPin className="w-10 h-10 text-[#D4A64A] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-[500] text-[22px]">{address.label}</p>
                   <p className="font-[500] text-[16px] aria-font">
@@ -231,7 +227,7 @@ const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="bg-orange-500 p-2 rounded-full hover:bg-orange-600 transition-colors"
+                    className="bg-[#D4A64A] p-2 rounded-full hover:bg-[#b3873a] transition-colors"
                   >
                     <Icon className="w-6 h-6 text-white" />
                   </a>
@@ -252,7 +248,7 @@ const Footer: React.FC = () => {
           {' | Supported by '}
           <Link
             href={siteConfig.supportedBy.url}
-            className="underline text-[#2EA3F2] hover:text-[#2EA3F2] transition-colors"
+            className="underline text-[#CFC5B2] hover:text-[#CFC5B2] transition-colors"
           >
             {siteConfig.supportedBy.name}
           </Link>
@@ -261,7 +257,7 @@ const Footer: React.FC = () => {
               {' | A project of '}
               <Link
                 href={siteConfig.parentOrg.url}
-                className="underline text-[#2EA3F2] hover:text-[#2EA3F2] transition-colors"
+                className="underline text-[#CFC5B2] hover:text-[#CFC5B2] transition-colors"
               >
                 {siteConfig.parentOrg.name}
               </Link>
