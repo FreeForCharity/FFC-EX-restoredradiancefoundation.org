@@ -353,8 +353,10 @@ export default function PrivacyPolicy() {
             permissive or the opt-in default applies to Google&apos;s tags is determined by Google
             from your IP address at the time of your visit; IP geolocation is approximate. In the
             EEA, the UK, and Switzerland, Google Analytics runs cookie-free until you accept.
-            Everywhere else, including the United States, analytics cookies are set from your first
-            pageview. Our{' '}
+            (Switzerland is included because Google&apos;s consent defaults cover it; Swiss
+            visitors&apos; data is protected by the Swiss FADP rather than the GDPR.) Everywhere
+            else, including the United States, analytics cookies are set from your first pageview.
+            Our{' '}
             <Link href="/cookie-policy" className="text-[#0062CC] underline">
               Cookie Policy
             </Link>{' '}
@@ -481,7 +483,7 @@ export default function PrivacyPolicy() {
             electronic storage is 100% secure.
           </p>
 
-          {/* Section 9 */}
+          {/* Section 11 */}
           <ol className="list-decimal list-inside pb-[1em]" start={11}>
             <li>
               <h2 className="text-[26px] leading-[26px] font-[700] text-[#333] mb-[10px]">
@@ -496,7 +498,7 @@ export default function PrivacyPolicy() {
             Policy of every site you visit.
           </p>
 
-          {/* Section 10 */}
+          {/* Section 12 */}
           <ol className="list-decimal list-inside pb-[1em]" start={12}>
             <li>
               <h2 className="text-[26px] leading-[26px] font-[700] text-[#333] mb-[10px]">
@@ -519,7 +521,7 @@ export default function PrivacyPolicy() {
             </li>
           </ul>
 
-          {/* Section 11 */}
+          {/* Section 13 */}
           <ol className="list-decimal list-inside pb-[1em]" start={13}>
             <li>
               <h2 className="text-[26px] leading-[26px] font-[700] text-[#333] mb-[10px]">
@@ -543,7 +545,7 @@ export default function PrivacyPolicy() {
             </li>
           </ul>
 
-          {/* Section 12 */}
+          {/* Section 14 */}
           <ol className="list-decimal list-inside pb-[1em]" start={14}>
             <li>
               <h2 className="text-[26px] leading-[26px] font-[700] text-[#333] mb-[10px]">
@@ -566,7 +568,7 @@ export default function PrivacyPolicy() {
             </li>
           </ul>
 
-          {/* Section 13 */}
+          {/* Section 15 */}
           <ol className="list-decimal list-inside pb-[1em]" start={15}>
             <li>
               <h2 className="text-[26px] leading-[26px] font-[700] text-[#333] mb-[10px]">
@@ -587,7 +589,7 @@ export default function PrivacyPolicy() {
             </li>
           </ul>
 
-          {/* Section 14 */}
+          {/* Section 16 */}
           <ol className="list-decimal list-inside pb-[1em]" start={16}>
             <li>
               <h2 className="text-[26px] leading-[26px] font-[700] text-[#333] mb-[10px]">
