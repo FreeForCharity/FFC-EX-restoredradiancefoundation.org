@@ -7,8 +7,16 @@
 // site at its own accounts by editing this one file.
 //
 // To use your own accounts, replace the placeholder values below with the IDs
-// from each provider's dashboard. Leave a value as its placeholder to keep that
-// integration effectively inert.
+// from each provider's dashboard.
+//
+// Leaving a value as its placeholder keeps that integration inert for the
+// loaders that check `isConfigured` below: the direct GA4 loader, the Meta
+// Pixel and Microsoft Clarity. It does NOT apply to GTM. This fork's
+// `components/google-tag-manager` reads `gtmId` and renders the container
+// snippet unconditionally, so a placeholder there produces a live GTM tag
+// pointed at a nonexistent container rather than no tag at all. Stated
+// explicitly because the promise above used to be written as though it
+// covered everything, and GTM is the one most sites set.
 export const analyticsConfig = {
   // Google Tag Manager container ID, e.g. 'GTM-ABC1234'. GTM is the umbrella
   // that can load the others, so this is the main one most sites set.
@@ -23,3 +31,24 @@ export const analyticsConfig = {
   // Microsoft Clarity project ID.
   clarityProjectId: 'XXXXXXXXXX',
 } as const
+
+// The placeholder values shipped above. The `isConfigured` loaders check
+// against this list so that the placeholder promise a few lines up is
+// actually honored — for those loaders. GTM does not consult it; see the
+// caveat above.
+const PLACEHOLDER_IDS: readonly string[] = ['G-XXXXXXXXXX', 'XXXXXXXXXXXXXXX', 'XXXXXXXXXX']
+
+/**
+ * True when an analytics ID has been replaced with a real value. A falsy
+ * or whitespace-only value, one of the shipped placeholders, or any
+ * obviously-templated value (six or more consecutive X's) counts as NOT
+ * configured, so the integration it belongs to stays inert.
+ */
+export function isConfigured(id: string | undefined | null): boolean {
+  if (!id) return false
+  const trimmed = id.trim()
+  if (!trimmed) return false
+  if (PLACEHOLDER_IDS.includes(trimmed)) return false
+  if (/X{6,}/.test(trimmed)) return false
+  return true
+}
