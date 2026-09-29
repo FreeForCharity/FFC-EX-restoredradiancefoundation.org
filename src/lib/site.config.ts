@@ -25,6 +25,40 @@ export type SiteAddress = {
   mapUrl: string
 }
 
+/**
+ * A footer-standard field the charity has not supplied yet. Listing a field in
+ * `siteConfig.pending` renders a visible "awaiting information" placeholder in
+ * its place (plain text, never a link), so a gap in the FFC footer standard is
+ * a call to action on the page rather than a silent omission. The field's own
+ * value must stay EMPTY while it is pending, so no placeholder or borrowed
+ * value (e.g. the template's supporting-organization details) can ship behind it.
+ *
+ * An empty value that is NOT listed here keeps its plain meaning: the charity
+ * has none (e.g. no public phone). `taxStatusLabel` is deliberately not a
+ * pending field: it is a legal claim, and '' means "make no claim".
+ *
+ * What "empty" means per field: `email` → `contactEmail`; `phone` → both
+ * `phone.display` and `phone.tel`; `address` → `addresses: []`; `ein` → `ein`;
+ * `guidestar` → both `guidestar` URLs; `social` → every `social[].href`;
+ * `team` → no member in src/data/team/*.json has a name; `donationUrl` →
+ * `integrations.zeffyDonationUrl`. (Ported from
+ * FreeForCharity/FFC-IN-FFC_Single_Page_Template#483; this site keeps its
+ * donation URL under `integrations` and has no volunteer page.)
+ */
+export type PendingField =
+  | 'email'
+  | 'phone'
+  | 'address'
+  | 'ein'
+  | 'guidestar'
+  | 'social'
+  | 'team'
+  | 'donationUrl'
+  | 'volunteerUrl'
+
+/** Visible text shown in place of a pending field. */
+export const PENDING_TEXT = 'Awaiting information from the charity'
+
 export type SiteConfig = {
   /** Display name of the charity (used in titles, OG/Twitter cards). */
   name: string
@@ -107,6 +141,15 @@ export type SiteConfig = {
    */
   parentOrg?: { name: string; url: string; hubUrl: string }
   /**
+   * Footer-standard fields still awaiting the charity. Each listed field keeps
+   * an EMPTY value and renders a visible plain-text placeholder
+   * (`PENDING_TEXT`) in its slot, never a link. An empty value NOT listed here
+   * means "the charity has none". `taxStatusLabel` is deliberately not
+   * pending-able: it is a legal claim, so '' means "make no claim". See
+   * `PendingField`. Omit (or leave empty) when nothing is pending.
+   */
+  pending?: readonly PendingField[]
+  /**
    * Third-party integration endpoints. Each fork points these at its own
    * accounts — the domains are already allow-listed in the CSP, so only the
    * path/ID changes here.
@@ -158,6 +201,7 @@ export const siteConfig: SiteConfig = {
   nonprofitStatus: 'https://schema.org/Nonprofit501c3',
   phone: { display: '(469) 379-2789', tel: '4693792789' },
   addresses: [],
+  // No Candid / GuideStar profile supplied by the charity yet: pending.
   guidestar: { profileUrl: '', directProfileUrl: '' },
   supportedBy: {
     name: 'Free For Charity',
@@ -174,10 +218,16 @@ export const siteConfig: SiteConfig = {
     // Restored Radiance Foundation's live Jotform application form, linked
     // from the Apply Now section.
     applicationFormUrl: 'https://form.jotform.com/261858987137072',
-    sociableKitEventsWidgetUrl:
-      'https://widgets.sociablekit.com/facebook-page-events/iframe/25631700',
-    microsoftFormUrl: 'https://forms.office.com/r/vePxGq6JqG',
+    // The template's SociableKit events widget and Microsoft Forms application
+    // form were Free-For-Charity accounts (neither is rendered here — the
+    // Events section is not on the home page and Apply Now uses the Jotform
+    // above), so they are emptied rather than left as fallbacks.
+    sociableKitEventsWidgetUrl: '',
+    microsoftFormUrl: '',
   },
+  // Footer-standard fields still awaiting the charity; each renders a visible
+  // 'awaiting information' placeholder until it is filled in.
+  pending: ['address', 'guidestar', 'team'],
 }
 
 /**
@@ -212,4 +262,20 @@ export function twitterSite(): string | undefined {
 /** Returns the OG/Twitter card description, falling back to the longer page description. */
 export function cardDescription(): string {
   return siteConfig.shortDescription.trim() || siteConfig.description
+}
+
+/** True when `field` is listed in `siteConfig.pending`. */
+export function isPending(field: PendingField): boolean {
+  return siteConfig.pending?.includes(field) ?? false
+}
+
+/**
+ * The charity's published phone number (both `display` and `tel` set), or
+ * null. A pending or missing number is never shown as a dialable link.
+ */
+export function publishedPhone(): { display: string; tel: string } | null {
+  if (isPending('phone')) return null
+  const display = siteConfig.phone.display.trim()
+  const tel = siteConfig.phone.tel.trim()
+  return display && tel ? { display, tel } : null
 }
