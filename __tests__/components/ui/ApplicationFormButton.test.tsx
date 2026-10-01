@@ -1,6 +1,8 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import ApplicationFormButton from '../../../src/components/ui/ApplicationFormButton'
+import { siteConfig } from '@/lib/site.config'
+import { restoreSiteConfig } from '../../helpers/site-identity'
 
 describe('ApplicationFormButton', () => {
   it('renders with the default button label when no text prop is provided', () => {
@@ -21,6 +23,12 @@ describe('ApplicationFormButton', () => {
   })
 
   it('opens the dialog when the button is clicked and shows the iframe with the default form URL', () => {
+    // The default comes from siteConfig; this site configures none (the
+    // template's was a supporting-organization form), so set a test one.
+    siteConfig.integrations = {
+      ...siteConfig.integrations,
+      microsoftFormUrl: 'https://forms.office.com/r/vePxGq6JqG',
+    }
     render(<ApplicationFormButton />)
     fireEvent.click(screen.getByRole('button', { name: 'Apply to Become a Supported Charity' }))
     const dialog = screen.getByRole('dialog')
@@ -31,6 +39,7 @@ describe('ApplicationFormButton', () => {
     expect(iframe).not.toBeNull()
     expect(iframe).toHaveAttribute('src', 'https://forms.office.com/r/vePxGq6JqG')
     expect(iframe).toHaveAttribute('title', 'Charity Application Form')
+    restoreSiteConfig()
   })
 
   it('uses the formUrl prop when provided', () => {

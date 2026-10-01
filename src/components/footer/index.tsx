@@ -8,7 +8,11 @@ import { FaFacebookF, FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa
 import { FaXTwitter } from 'react-icons/fa6'
 import type { IconType } from 'react-icons'
 
-import { siteConfig } from '@/lib/site.config'
+import { isPending, siteConfig } from '@/lib/site.config'
+import PendingNote from '@/components/ui/PendingNote'
+
+// Footer-standard placeholder styling on the black footer background.
+const PENDING_NOTE_CLASS = 'text-[15px] text-gray-300'
 import { assetPath } from '@/lib/assetPath'
 
 // Maps a social link's label (as defined in siteConfig.social) to an icon.
@@ -48,6 +52,12 @@ const Footer: React.FC = () => {
                   height={108}
                 />
               </a>
+            )}
+            {isPending('guidestar') && (
+              <div>
+                <p className="font-[500] text-[22px]">GuideStar / Candid Profile</p>
+                <PendingNote className={PENDING_NOTE_CLASS} />
+              </div>
             )}
             {siteConfig.guidestar.directProfileUrl && (
               <Link
@@ -186,6 +196,17 @@ const Footer: React.FC = () => {
                   >
                     {siteConfig.phone.display}
                   </a>
+                </div>
+              </div>
+            )}
+
+            {/* A pending address shows the placeholder, with no map link. */}
+            {isPending('address') && (
+              <div className="flex items-start gap-3">
+                <FiMapPin className="w-10 h-10 text-[#D4A64A] flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-[500] text-[22px]">Address</p>
+                  <PendingNote className={PENDING_NOTE_CLASS} />
                 </div>
               </div>
             )}
